@@ -93,5 +93,34 @@ public class Main {
         System.out.println("---------------------------------");
 
 
+        Phone phone4 = new iPhone14ProMax();
+        phone4.addContact("1", "0798112248", "Maria", "Cornwell");
+        phone4.getFirstContact();
+
+        phone4.addContact("2", "0741256300", "Charles", "Hillman");
+        phone4.getLastContact();
+        phone4.sendMessage("0741256300", "Hi Charles");
+        phone4.sendMessage("0798112248", "Hi Maria");
+        phone4.sendMessage("0741256300", "Are you driving?");
+        phone4.sendMessage("0798112248", "Are you feeling well?");
+
+        phone4.getFirstMessage("0741256300");
+        phone4.getSecondMessage("0741256300");
+
+        phone4.getFirstMessage("0798112248");
+        phone4.getSecondMessage("0798112248");
+
+
+        phone4.call("0798112248");
+        phone4.call("0741256300");
+        phone4.call("0798112248");
+        phone4.call("0741256300");
+        phone4.call("0798112248");
+        phone4.call("0741256300");
+        phone4.call("0798112248");
+
+        phone4.viewHistory();
+
+        System.out.println("---------------------------------");
     }
 }

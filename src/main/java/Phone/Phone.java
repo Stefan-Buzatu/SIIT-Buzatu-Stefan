@@ -13,13 +13,15 @@ public abstract class Phone implements PhoneInterface {
     private Color color;
     private String material;
     private String IMEI;
+    private int currentBatteryLife;
 
 
-    public Phone(int batteryLife, Color color, String material, String IMEI) {
+    public Phone(int batteryLife, Color color, String material, String IMEI, int currentBatteryLife) {
         this.batteryLife = batteryLife;
         this.color = color;
         this.material = material;
         this.IMEI = IMEI;
+        this.currentBatteryLife = currentBatteryLife;
     }
 
     public List<Contact> getContacts() {
@@ -60,6 +62,18 @@ public abstract class Phone implements PhoneInterface {
             if (validationPhoneNumber(phoneNumber, i))
                 contacts.get(i).setCallHistory(localDate);
         }
+    }
+
+    public int getCurrentBatteryLife() {
+        return currentBatteryLife;
+    }
+
+    public void setCurrentBatteryLife(int currentBatteryLife) {
+        this.currentBatteryLife = currentBatteryLife;
+    }
+
+    public boolean isBatteryDead() {
+        return (this.currentBatteryLife <= 0) ? true : false;
     }
 
 }
